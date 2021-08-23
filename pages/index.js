@@ -4,27 +4,27 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [typingIndicator, setTypingIndicator] = useState(true);
   const [bubbles, setbubbles] = useState([
-    { txt: "Halo 👋", show: false, delay: 500 },
-    { txt: "Kenalin, gue Alvira Mohamad", show: false, delay: 1500 },
+    { txt: "Halo 👋", show: false, delay: 1000 },
+    { txt: "Kenalin, gue Alvira Mohamad", show: false, delay: 2000 },
     {
-      txt: "Saat ini, gue lagi merintis karir sebagai seorang programmer.",
+      txt: "Saat ini, gue lagi merintis karir sebagai seorang programmer, khususnya di bidang web frontend",
       show: false,
       delay: 4000,
     },
     {
-      txt: "Khususnya di bidang web frontend developer.",
-      show: false,
-      delay: 6000,
-    },
-    {
-      txt: "Web ini lagi dibenerin ya .",
+      txt: "Btw, ini cuma ala-ala chat ya :D",
       show: false,
       delay: 8000,
     },
     {
-      txt: "Btw, jaga kesehatan selalu! 😷",
+      txt: "dan web ini lagi gue rapihin 🧑‍💻",
       show: false,
       delay: 12000,
+    },
+    {
+      txt: "Oh iya, jangan lupa jaga kesehatan selalu ya! 😷 😇",
+      show: false,
+      delay: 15000,
     },
   ]);
 
@@ -51,15 +51,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center min-h-screen py-2">
+    <div className="flex flex-col justify-center min-h-screen py-2 bg-gray-50">
       <Head>
-        <title>Create Next App</title>
+        <title>Alvira Mohamad</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1 className="font-serif text-4xl text-left px-6 md:px-36 mt-6">
+      <h1 className="hidden">Alvira Mohamad</h1>
+      <h3 className="font-serif text-4xl text-left px-6 md:px-36 mt-6">
         alvilab.tech
-      </h1>
+      </h3>
       <div className="flex flex-col justify-end flex-1 px-6 md:px-36 text-center mb-6">
         <div className="flex flex-col items-start justify-around">
           {bubbles.map((item, key) => {
@@ -68,7 +68,7 @@ export default function Home() {
                 key={key}
                 className={`${
                   item.show ? "animate-bounce-bottom-left" : "hidden"
-                } px-6 py-2 mt-4 text-left border rounded-xl ml-2 shadow-sm `}
+                } px-6 py-2 mt-4 text-left border rounded-xl ml-2 shadow-sm bg-white`}
               >
                 {item.txt}
               </p>
