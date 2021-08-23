@@ -34,6 +34,10 @@ export default function Home() {
         let items = [...bubbles];
         items[count].show = true;
         setbubbles(items);
+        setTypingIndicator(false);
+        setTimeout(() => {
+          setTypingIndicator(true);
+        }, 500);
       }
     }, bubbles[count].delay);
   };
@@ -47,7 +51,7 @@ export default function Home() {
 
     setTimeout(() => {
       setTypingIndicator(false);
-    }, calcTypingSpeed + 500);
+    }, calcTypingSpeed + 1000);
   }, []);
 
   return (
