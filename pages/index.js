@@ -47,7 +47,7 @@ export default function Home() {
 
     setTimeout(() => {
       setTypingIndicator(false);
-    }, calcTypingSpeed);
+    }, calcTypingSpeed + 500);
   }, []);
 
   return (
