@@ -9,22 +9,22 @@ export default function Home() {
     {
       txt: "Saat ini, gue lagi merintis karir sebagai seorang programmer, khususnya di bidang web frontend",
       show: false,
-      delay: 4000,
+      delay: 5000,
     },
     {
       txt: "Btw, ini cuma ala-ala chat ya :D",
       show: false,
-      delay: 8000,
+      delay: 10000,
     },
     {
       txt: "dan web ini lagi gue rapihin 🧑‍💻",
       show: false,
-      delay: 12000,
+      delay: 13000,
     },
     {
       txt: "Oh iya, jangan lupa jaga kesehatan selalu ya! 😷 😇",
       show: false,
-      delay: 15000,
+      delay: 18000,
     },
   ]);
 
