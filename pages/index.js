@@ -5,26 +5,26 @@ export default function Home() {
   const [typingIndicator, setTypingIndicator] = useState(true);
   const [bubbles, setbubbles] = useState([
     { txt: "Halo 👋", show: false, delay: 1000 },
-    { txt: "Kenalin, gue Alvira Mohamad", show: false, delay: 2000 },
+    { txt: "Kenalin, gue Alvira Mohamad", show: false, delay: 3500 },
     {
       txt: "Saat ini, gue lagi merintis karir sebagai seorang programmer, khususnya di bidang web frontend",
       show: false,
-      delay: 5000,
+      delay: 8000,
     },
     {
       txt: "Btw, ini cuma ala-ala chat ya :D",
       show: false,
-      delay: 10000,
+      delay: 12000,
     },
     {
       txt: "dan web ini lagi gue rapihin 🧑‍💻",
       show: false,
-      delay: 13000,
+      delay: 15000,
     },
     {
-      txt: "Oh iya, jangan lupa jaga kesehatan selalu ya! 😷 😇",
+      txt: "Oh iya, jangan lupa jaga kesehatan selalu ya! 😷 😇 , dan tungguin update konten di web ini...",
       show: false,
-      delay: 18000,
+      delay: 19000,
     },
   ]);
 
