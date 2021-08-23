@@ -37,7 +37,7 @@ export default function Home() {
         setTypingIndicator(false);
         setTimeout(() => {
           setTypingIndicator(true);
-        }, 500);
+        }, 800);
       }
     }, bubbles[count].delay);
   };
