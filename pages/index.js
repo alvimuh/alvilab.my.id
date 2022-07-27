@@ -16,16 +16,6 @@ export default function Home() {
       show: false,
       delay: 12000,
     },
-    {
-      txt: "dan web ini lagi gue rapihin 🧑‍💻",
-      show: false,
-      delay: 15000,
-    },
-    {
-      txt: "Oh iya, jangan lupa jaga kesehatan selalu ya! 😷 😇 , dan tungguin update konten di web ini...",
-      show: false,
-      delay: 19000,
-    },
   ]);
 
   const timeline = (count) => {
@@ -62,7 +52,7 @@ export default function Home() {
       </Head>
       <h1 className="hidden">Alvira Mohamad</h1>
       <h3 className="font-serif text-4xl text-left px-6 md:px-36 mt-6">
-        alvilab.tech
+        alvilab.my.id
       </h3>
       <div className="flex flex-col justify-end flex-1 px-6 md:px-36 text-center mb-6">
         <div className="flex flex-col items-start justify-around">
