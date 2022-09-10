@@ -5,16 +5,38 @@ export default function Home() {
   const [typingIndicator, setTypingIndicator] = useState(true);
   const [bubbles, setbubbles] = useState([
     { txt: "Halo 👋", show: false, delay: 1000 },
-    { txt: "Kenalin, gue Alvira Mohamad", show: false, delay: 3500 },
+    { txt: "Kenalin, aku Alvira Mohamad", show: false, delay: 3500 },
     {
-      txt: "Saat ini, gue lagi merintis karir sebagai seorang programmer, khususnya di bidang web frontend",
+      txt: "Saat ini, aku lagi merintis karir sebagai seorang programmer, khususnya di bidang web frontend",
       show: false,
       delay: 8000,
+    },
+
+    {
+      txt: "Ini beberapa project yang pernah aku buat..",
+      show: false,
+      delay: 12000,
+    },
+    {
+      attachment: [
+        {
+          img: "/portofolio/kreasijabar.png",
+          title: "Kreasi Jabar",
+          label: "Fullstack Website",
+        },
+        {
+          img: "/portofolio/bizlook.png",
+          title: "Bizlook",
+          label: "Fullstack Website",
+        },
+      ],
+      show: false,
+      delay: 12000,
     },
     {
       txt: "Btw, ini cuma ala-ala chat ya :D",
       show: false,
-      delay: 12000,
+      delay: 18000,
     },
   ]);
 
@@ -57,16 +79,42 @@ export default function Home() {
       <div className="flex flex-col justify-end flex-1 px-6 md:px-36 text-center mb-6">
         <div className="flex flex-col items-start justify-around">
           {bubbles.map((item, key) => {
-            return (
-              <p
-                key={key}
-                className={`${
-                  item.show ? "animate-bounce-bottom-left" : "hidden"
-                } px-6 py-2 mt-4 text-left border rounded-xl ml-2 shadow-sm bg-white`}
-              >
-                {item.txt}
-              </p>
-            );
+            if (item.attachment === undefined) {
+              return (
+                <p
+                  key={key}
+                  className={`${
+                    item.show ? "animate-bounce-bottom-left" : "hidden"
+                  } mt-4 ml-2 px-6 py-3 text-left border rounded-xl shadow-sm bg-white`}
+                >
+                  {item.txt}
+                </p>
+              );
+            } else {
+              return (
+                <div
+                  className={`${
+                    item.show ? "animate-bounce-bottom-left" : "hidden"
+                  } flex mt-4 ml-2 gap-2 text-left`}
+                >
+                  {item.attachment.map((attachmentElement) => {
+                    return (
+                      <div className="pt-4 border rounded-xl shadow-sm bg-white overflow-hidden">
+                        <div className="px-4 mb-2">
+                          <h3 className="text-lg font-normal text-gray-700 leading-none">
+                            {attachmentElement.title}
+                          </h3>
+                          <p className="bg-red-100 text-red-700 px-2 rounded-full text-xs font-semibold inline-block text-left">
+                            {attachmentElement.label}
+                          </p>
+                        </div>
+                        <img src={attachmentElement.img} />
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            }
           })}
           <div className="flex items-center">
             <div className="w-14 h-14 rounded-full  mt-4 overflow-hidden shadow-lg border-white border-2">
