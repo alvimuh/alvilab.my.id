@@ -1,9 +1,12 @@
 export default function AttachmentList({ attachments }) {
   return (
     <div className="flex mt-4 ml-2 gap-2 text-left">
-      {attachments.map((attachmentElement) => {
+      {attachments.map((attachmentElement, index) => {
         return (
-          <div className="pt-4 border rounded-xl shadow-sm bg-white overflow-hidden">
+          <div
+            key={index}
+            className="pt-4 border rounded-xl shadow-sm bg-white overflow-hidden"
+          >
             <div className="px-4 mb-2">
               <h3 className="text-lg font-normal text-gray-700 leading-none">
                 {attachmentElement.title}
