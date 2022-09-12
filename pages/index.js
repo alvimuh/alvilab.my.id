@@ -216,9 +216,13 @@ export default function Home() {
             </svg>
           </div>
           {showActionButton ? (
-            <button className="ml-4 bg-gray-100 text-gray-600 py-2 flex-1 lg:flex-initial px-8 rounded-full font-medium">
+            <a
+              href="https://www.instagram.com/alvi.muh/"
+              target="_blank"
+              className="ml-4 bg-gray-100 text-gray-600 py-2 flex-1 lg:flex-initial px-8 rounded-full font-medium"
+            >
               Contact me on Instagram
-            </button>
+            </a>
           ) : (
             <div></div>
           )}
