@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import AttachmentList from "../components/AttachmentList";
 import ChatText from "../components/ChatText";
 
 export default function Chat() {

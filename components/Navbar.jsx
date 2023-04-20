@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { ThemeContext } from "../utils/theme";
 
 export default function Navbar() {
+  const { theme, onChangeTheme } = useContext(ThemeContext);
   const { pathname } = useRouter();
   const menus = [
     {
@@ -20,14 +23,18 @@ export default function Navbar() {
   return (
     <nav className="absolute top-0 w-full">
       <div className="max-w-5xl mx-auto px-12 py-6 flex justify-between">
-        <h2 className="text-white text-xl font-serif">Alvilab.my.id </h2>
+        <h2 className="text-gray-900 dark:text-white text-xl font-serif">
+          Alvilab.my.id{" "}
+        </h2>
         <ul className="flex gap-4">
           {menus.map((item, index) => (
             <li key={index}>
               <Link
                 href={item.pathname}
                 className={`${
-                  pathname === item.pathname ? "text-gray-100" : "text-gray-400"
+                  pathname === item.pathname
+                    ? "text-gray-800 dark:text-gray-100"
+                    : "text-gray-500 dark:text-gray-400"
                 } font-semibold`}
               >
                 {item.label}
@@ -35,6 +42,13 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        {/* <button
+          onClick={() => {
+            onChangeTheme();
+          }}
+        >
+          {theme}
+        </button> */}
       </div>
     </nav>
   );
