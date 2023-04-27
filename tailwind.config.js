@@ -3,9 +3,13 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      serif: ["Cascadia Code"],
+    },
     extend: {
       animation: {
         "bounce-bottom-left": "bounce-bottom-left 1s",
+        "spin-slow": "spin 18s linear infinite",
       },
       keyframes: {
         "bounce-bottom-left": {

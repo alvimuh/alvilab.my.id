@@ -1,5 +1,5 @@
-import "tailwindcss/tailwind.css";
-import "../public/style.css";
+// import "tailwindcss/tailwind.css";
+import "../tailwind.css";
 import { useState } from "react";
 import { ThemeContext } from "../utils/theme";
 

@@ -22,11 +22,11 @@ export default function Navbar() {
   ];
   return (
     <nav className="absolute top-0 w-full">
-      <div className="max-w-5xl mx-auto px-12 py-6 flex justify-between">
-        <h2 className="text-gray-900 dark:text-white text-xl font-serif">
-          Alvilab.my.id{" "}
+      <div className="container-default py-6 flex justify-between">
+        <h2 className="text-gray-600 dark:text-white text-xl font-serif">
+          Alvilab.my.id
         </h2>
-        <ul className="flex gap-4">
+        <ul className="hidden md:flex gap-4">
           {menus.map((item, index) => (
             <li key={index}>
               <Link

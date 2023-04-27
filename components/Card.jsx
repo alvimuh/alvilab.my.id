@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Card = ({ title, description, featuredImg, plarform, tech }) => {
   return (
-    <div className="border rounded-lg pb-[100%] relative overflow-hidden shadow-sm cursor-pointer">
+    <div className="border rounded-lg pb-[100%] relative overflow-hidden shadow-sm ">
       <img src={featuredImg} className="absolute top-0" />
       <div className="absolute transition ease-in bottom-0 translate-y-[60px] hover:-translate-y-0 h-[calc(100%+60px)] w-full bg-gradient-to-t from-white via-[#ffffffd3] flex flex-col justify-end">
         <div className="px-4 py-3">

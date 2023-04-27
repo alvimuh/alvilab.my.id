@@ -1,10 +1,28 @@
 import Link from "next/link";
 import React from "react";
 
-const Button = ({ children, onClick = () => {}, href, ...props }) => {
-  let classess = [
-    "font-semibold text-base bg-gray-800 text-white px-4 py-1 rounded",
-  ];
+const Button = ({
+  children,
+  onClick = () => {},
+  variant,
+  isBlock,
+  href,
+  ...props
+}) => {
+  let classess = ["font-semibold text-base px-4 py-1 rounded transition"];
+  switch (variant) {
+    case "solid":
+      classess.push("bg-gray-800 text-white hover:bg-gray-600");
+      break;
+    case "outlined":
+      classess.push(
+        "text-gray-800 text-gray-800 border border-gray-800 hover:text-gray-600 hover:border-gray-500"
+      );
+      break;
+    default:
+      classess.push("bg-gray-800 text-white hover:bg-gray-600");
+  }
+  if (isBlock) classess.push("block w-full");
   if (href != null)
     return (
       <Link className={classess.join(" ")} href={href} {...props}>
