@@ -23,7 +23,7 @@
     background-color: #00080f;
   }
   p {
-    @apply text-gray-700 text-sm;
+    @apply text-gray-700 text-sm md:text-base;
   }
 }
 @layer components {
