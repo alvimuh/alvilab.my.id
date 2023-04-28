@@ -59,9 +59,9 @@ export default function Home() {
                 playsInline
                 autoPlay
                 loop
-                src="/FA977C05-58D1-41CD-9687-9DD95CC362AD.mp4"
+                src="/IMG_4859.mp4"
               >
-                <source data-src="/FA977C05-58D1-41CD-9687-9DD95CC362AD.mp4" />
+                <source data-src="/IMG_4859.mp4" />
               </video>
             </div>
             <div className="absolute w-96 pb-96 bottom-[-120px] absolute-x-center">
