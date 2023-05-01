@@ -3,13 +3,20 @@ import { alvilabAPI } from "../../utils/axios";
 const fetchBookmark = async () => {
   try {
     const res = await alvilabAPI.get("/bookmark");
-    console.log("🚀 ~ file: api.js:6 ~ fetchBookmark ~ res:", res);
     return res.data.data;
   } catch (error) {
     //error handler
-    console.log(error);
     throw new Error("Failed to get bookmark");
   }
 };
 
-export { fetchBookmark };
+const postNewVisitor = async (data) => {
+  try {
+    const res = await alvilabAPI.post(`/bookmark/${data.slug}/new-visitor`);
+    return true;
+  } catch (error) {
+    throw new Error("Failed to record new visitor");
+  }
+};
+
+export { fetchBookmark, postNewVisitor };
