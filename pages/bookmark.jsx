@@ -22,7 +22,7 @@ export default function Home() {
     ],
   };
 
-  const { data, isFetched } = useQuery("bookmark", fetchBookmark);
+  const { data, isFetched, isLoading } = useQuery("bookmark", fetchBookmark);
 
   const { mutate } = useMutation({
     mutationFn: postNewVisitor,
@@ -63,12 +63,21 @@ export default function Home() {
         </div>
       </header>
       <Section>
-        {isFetched &&
+        {isLoading ? (
+          <>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+          </>
+        ) : isFetched ? (
           data.map((item, index) => (
             <button
               key={index}
               onClick={() => onBookmarkClick(item)}
-              className="block w-full text-left bg-gray-100 bg-opacity-5 px-3 md:px-6 py-2 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
+              className="block w-full text-left px-3 md:px-6 py-2 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
             >
               <h3 className="text-base md:text-xl leading-tight mb-1">
                 {item.title}
@@ -85,7 +94,8 @@ export default function Home() {
                 {item.total_visitor}
               </p>
             </button>
-          ))}
+          ))
+        ) : null}
       </Section>
     </>
   );
