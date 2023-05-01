@@ -183,8 +183,19 @@ export default function Home() {
               jokes, and tricks.
             </p>
             <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 md:w-96 gap-3">
-              <Button isBlock>Follow on Tiktok</Button>
-              <Button isBlock variant="outlined">
+              <Button
+                isBlock
+                href="https://www.tiktok.com/@alvi.muh"
+                target="_blank"
+              >
+                Follow on Tiktok
+              </Button>
+              <Button
+                isBlock
+                href="https://www.instagram.com/alvi.muh"
+                variant="outlined"
+                target="_blank"
+              >
                 Follow on Instagram
               </Button>
             </div>
@@ -222,7 +233,13 @@ export default function Home() {
               fellow coders today!
             </p>
             <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 gap-3">
-              <Button isBlock>Join Server Discord</Button>
+              <Button
+                isBlock
+                href="https://bit.ly/jointernakkode"
+                target="_blank"
+              >
+                Join Server Discord
+              </Button>
             </div>
           </div>
         </div>
