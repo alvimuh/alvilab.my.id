@@ -41,7 +41,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div></div>
-      <header className="overflow-hidden ">
+      <header className="overflow-hidden">
         <div className="pt-24 container-default flex flex-col md:flex-row">
           <div className="h-[240px] md:h-[240px] md:w-1/2 md:self-center">
             <p className="text-4xl md:text-6xl text-gray-900 dark:text-white font-bold mb-4">

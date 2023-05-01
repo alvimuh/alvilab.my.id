@@ -6,6 +6,7 @@ const Button = ({
   onClick = () => {},
   variant,
   isBlock,
+  className,
   href,
   ...props
 }) => {
@@ -23,6 +24,7 @@ const Button = ({
       classess.push("bg-gray-800 text-white hover:bg-gray-600");
   }
   if (isBlock) classess.push("block w-full");
+  if (className) classess.push(className);
   if (href != null)
     return (
       <Link className={classess.join(" ")} href={href} {...props}>

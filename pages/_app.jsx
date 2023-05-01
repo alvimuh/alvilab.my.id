@@ -2,6 +2,7 @@
 import "../tailwind.css";
 import { useState } from "react";
 import { ThemeContext } from "../utils/theme";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
@@ -10,9 +11,13 @@ function MyApp({ Component, pageProps }) {
     setTheme(newTheme);
     document.querySelector("html").className = newTheme;
   };
+
+  const queryClient = new QueryClient();
   return (
     <ThemeContext.Provider value={{ theme, onChangeTheme }}>
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </ThemeContext.Provider>
   );
 }
