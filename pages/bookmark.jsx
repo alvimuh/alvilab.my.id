@@ -86,7 +86,7 @@ export default function Home() {
                 </span>
               </h3>
 
-              <p className="text-gray-600">Link description</p>
+              <p className="text-gray-600">{item.description}</p>
               <p className="text-gray-500 text-sm">
                 <span className="mr-1 relative bottom-[2px]">
                   <EyeIcon width={16} className="inline" />
