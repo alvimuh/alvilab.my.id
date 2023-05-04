@@ -104,61 +104,8 @@ export default function Home() {
             years.
           </p>
           <div className="mt-4">
-            <Button
-              href="https://www.linkedin.com/in/mohamadalvir"
-              target="_blank"
-            >
-              Connect on LinkedIn
-            </Button>
+            <Button href="/about">About me</Button>
           </div>
-        </div>
-        <div className="mt-8">
-          <h2 className="text-xl mb-2">Technical Skills</h2>
-          <p>
-            <span className="block md:inline text-gray-500">Languages:</span>{" "}
-            Proficient in JavaScript, HTML/CSS, Dart, PHP, Go
-          </p>
-          <p className="mt-1">
-            <span className="block md:inline text-gray-500">Frameworks:</span>{" "}
-            React.js (Next.js, CRA), React Native, Flutter, Laravel,
-            CodeIgniter, Echo, etc
-          </p>
-          <p className="mt-1">
-            <span className="block md:inline text-gray-500">Databases:</span>{" "}
-            PostgresSQL, MySQL, MongoDB
-          </p>
-          <p className="mt-1">
-            <span className="block md:inline text-gray-500">
-              Relevant Skills:
-            </span>{" "}
-            React Redux, React Hooks, REST API, GraphQL, UI Design, etc
-          </p>
-        </div>
-        <div className="mt-8">
-          <h2 className="text-xl mb-2">Education</h2>
-          <ExperienceItem
-            tag="Bandung, ID / Des 2021"
-            title="Indonesia Computer University"
-            subtitle="Bachelor of Computer Science"
-            description={[
-              "Major in Information System;",
-              <br />,
-              "Cumulative GPA: 3.8/4.0. Beasiswa Unggulan Kemendikbud Awardee.",
-            ]}
-          />
-          <h2 className="text-xl mb-2 mt-6">Course/Training</h2>
-          <ExperienceItem
-            tag="Udemy Course / Nov 2018"
-            title="The Complete Guide (incl. Hooks, React Router, Redux)"
-            subtitle="by Academind"
-            description="Deepen the fundamentals of javascript and react.js"
-          />
-          <ExperienceItem
-            tag="Udemy Course / Aug 2022"
-            title=" Dart - Pemrograman Dart untuk Pemula sampai Mahir"
-            subtitle="by Programmer Zaman Now"
-            description="Learn the fundamentals of dart and flutter"
-          />
         </div>
       </Section>
       <Section>
@@ -252,6 +199,13 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* <div className="fixed z-20 bottom-0 absolute-x-center mb-4 px-2 w-full">
+          <div className="flex flex-col md:flex-row gap-4 justify-between container-default bg-white px-8 md:px-12 py-4 md:py-8 w-full shadow-2xl rounded-lg">
+            <h4 className="text-xl">Looking for my bookmark?</h4>
+            <Button>Click here</Button>
+          </div>
+        </div> */}
       </Section>
     </>
   );

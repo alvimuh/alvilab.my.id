@@ -4,7 +4,8 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
-      serif: ["Cascadia Code"],
+      serif: ["Comme"],
+      serif: ["Source Code Pro"],
     },
     extend: {
       animation: {

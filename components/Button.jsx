@@ -20,6 +20,9 @@ const Button = ({
         "text-gray-800 text-gray-800 border border-gray-800 hover:text-gray-600 hover:border-gray-500"
       );
       break;
+    case "base":
+      classess.push("text-gray-800 text-gray-800 hover:text-gray-600");
+      break;
     default:
       classess.push("bg-gray-800 text-white hover:bg-gray-600");
   }
