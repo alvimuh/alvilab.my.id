@@ -5,22 +5,26 @@ import Section from "../components/Section";
 import { useQuery, useMutation } from "react-query";
 import { fetchBookmark, postNewVisitor } from "../modules/bookmark/api";
 import { ArrowUpRightIcon, EyeIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 export default function Home() {
-  const categoriesTab = {
-    active: 0,
+  const [categoriesTab, setCategoriesTab] = useState({
+    active: null,
     list: [
       {
         title: "All",
+        type: null,
       },
       {
         title: "Code Resources",
+        type: "coding-resource",
       },
       {
         title: "Setup Gear",
+        type: "setup",
       },
     ],
-  };
+  });
 
   const { data, isFetched, isLoading } = useQuery("bookmark", fetchBookmark);
 
@@ -33,6 +37,19 @@ export default function Home() {
       slug: data.slug,
     });
     window.open(data.link, "_blank");
+  };
+
+  const onTabClick = (type) => {
+    setCategoriesTab((prevState) => ({
+      ...prevState,
+      active: type,
+    }));
+  };
+
+  const bookmarkFilter = (item) => {
+    // return item.slug === categoriesTab.active
+    if (categoriesTab.active === null) return true;
+    return item.type === categoriesTab.active;
   };
 
   return (
@@ -51,9 +68,10 @@ export default function Home() {
                 <Button
                   key={index}
                   variant={
-                    index === categoriesTab.active ? "solid" : "outlined"
+                    item.type === categoriesTab.active ? "solid" : "outlined"
                   }
                   className="!rounded-full"
+                  onClick={() => onTabClick(item.type)}
                 >
                   {item.title}
                 </Button>
@@ -73,11 +91,11 @@ export default function Home() {
             <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
           </>
         ) : isFetched ? (
-          data.map((item, index) => (
+          data.filter(bookmarkFilter).map((item, index) => (
             <button
               key={index}
-              onClick={() => onBookmarkClick(item)}
-              className="block w-full text-left px-3 md:px-6 py-2 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
+              onClick={() => onBookmarkClick(item.slug)}
+              className="block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
             >
               <h3 className="text-base md:text-xl leading-tight mb-1">
                 {item.title}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const { pathname } = useRouter();
+  console.log(pathname);
   const menus = [
     {
       label: "Home",
