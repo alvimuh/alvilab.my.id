@@ -10,7 +10,9 @@ const Button = ({
   href,
   ...props
 }) => {
-  let classess = ["font-semibold text-base px-4 py-1 rounded transition"];
+  let classess = [
+    "font-semibold text-base text-center px-4 py-2 rounded transition",
+  ];
   switch (variant) {
     case "solid":
       classess.push("bg-gray-800 text-white hover:bg-gray-600");

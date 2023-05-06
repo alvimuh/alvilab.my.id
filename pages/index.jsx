@@ -43,8 +43,8 @@ export default function Home() {
       <div></div>
       <header className="overflow-hidden">
         <div className="pt-24 container-default flex flex-col md:flex-row">
-          <div className="h-[240px] md:h-[240px] md:w-1/2 md:self-center">
-            <p className="text-4xl md:text-6xl text-gray-900 dark:text-white font-bold mb-4">
+          <div className="h-[240px] md:w-1/2 md:self-center justify-center flex flex-col">
+            <p className="text-5xl md:text-6xl text-gray-900 dark:text-white font-bold mb-4">
               From front-end to back-end
             </p>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-400">
@@ -103,7 +103,7 @@ export default function Home() {
             frontend engineer, and a full-stack web developer for more than 4
             years.
           </p>
-          <div className="mt-4">
+          <div className="mt-6">
             <Button href="/about">About me</Button>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function Home() {
               enthusiasts like me, you can get insight about code, few coder
               jokes, and tricks.
             </p>
-            <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 md:w-96 gap-3">
+            <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 md:w-full gap-3">
               <Button
                 isBlock
                 href="https://www.tiktok.com/@alvi.muh"
@@ -179,7 +179,7 @@ export default function Home() {
               programming learners. Join our Discord server and get help from
               fellow coders today!
             </p>
-            <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 gap-3">
+            <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 md:w-1/2 gap-3">
               <Button
                 isBlock
                 href="https://bit.ly/jointernakkode"

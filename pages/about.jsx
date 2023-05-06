@@ -21,11 +21,17 @@ export default function About() {
             <p className="text-3xl md:text-5xl text-gray-900 dark:text-white font-bold mb-4">
               My name is Alvi
             </p>
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-400">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-400 mb-8">
               I am a software engineer who has work experience as a professional
               frontend engineer, and a full-stack web developer for more than 4
               years.
             </p>
+            <Button
+              href="https://www.linkedin.com/in/mohamadalvir"
+              target="_blank"
+            >
+              Connect on LinkedIn
+            </Button>
           </div>
         </div>
       </header>
@@ -77,14 +83,6 @@ export default function About() {
             subtitle="by Programmer Zaman Now"
             description="Learn the fundamentals of dart and flutter"
           />
-        </div>
-        <div className="mt-12 flex flex-row justify-end">
-          <Button
-            href="https://www.linkedin.com/in/mohamadalvir"
-            target="_blank"
-          >
-            Connect on LinkedIn
-          </Button>
         </div>
       </Section>
     </>

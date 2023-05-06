@@ -5,9 +5,13 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-          href="https://fonts.googleapis.com/css2?family=Comme:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,600;1,400&display=swap"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,600;1,400&display=swap"
           rel="stylesheet"
         />
       </Head>

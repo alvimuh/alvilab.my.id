@@ -3,6 +3,7 @@ import "../tailwind.css";
 import { useState } from "react";
 import { ThemeContext } from "../utils/theme";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeContext.Provider value={{ theme, onChangeTheme }}>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
+        <Footer />
       </QueryClientProvider>
     </ThemeContext.Provider>
   );
