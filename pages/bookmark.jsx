@@ -94,7 +94,7 @@ export default function Home() {
           data.filter(bookmarkFilter).map((item, index) => (
             <button
               key={index}
-              onClick={() => onBookmarkClick(item.slug)}
+              onClick={() => onBookmarkClick(item)}
               className="block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
             >
               <h3 className="text-base md:text-xl leading-tight mb-1">
