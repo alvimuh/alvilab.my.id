@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -13,6 +14,20 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Source+Code+Pro:ital,wght@0,600;1,400&display=swap"
           rel="stylesheet"
+        />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MR3EF18Q2H"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MR3EF18Q2H');`}
         />
       </Head>
       <body>
