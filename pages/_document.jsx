@@ -23,11 +23,13 @@ export default function Document() {
         <Script
           id="google-analytics"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={`
+          dangerouslySetInnerHTML={{
+            __html: `
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-MR3EF18Q2H');`}
+    gtag('config', 'G-MR3EF18Q2H');`,
+          }}
         />
       </Head>
       <body>
