@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ThemeContext } from "../utils/theme";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Footer from "../components/Footer";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
