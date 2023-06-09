@@ -95,7 +95,7 @@ export default function Home() {
             <button
               key={index}
               onClick={() => onBookmarkClick(item)}
-              className="block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
+              className="relative block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
             >
               <h3 className="text-base md:text-xl leading-tight mb-1">
                 {item.title}
@@ -111,6 +111,11 @@ export default function Home() {
                 </span>
                 {item.total_visitor}
               </p>
+              {item.is_pinned && (
+                <div className="border bg-gray-50 text-gray-500 py-1 px-3 rounded absolute top-3 right-2 text-xs font-semibold">
+                  Pinned
+                </div>
+              )}
             </button>
           ))
         ) : null}
