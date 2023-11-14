@@ -19,7 +19,7 @@ export default function About() {
         <div className="pt-24 pb-12 container-default">
           <div className="py-16">
             <p className="text-3xl md:text-5xl text-gray-900 dark:text-white font-bold mb-4">
-              My name is Alvi
+              Call me Alvi
             </p>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-400 mb-8">
               I am a software engineer who has work experience as a professional
