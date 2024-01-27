@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const { pathname } = useRouter();
-  console.log(pathname);
+
   const menus = [
     {
       label: "Home",
@@ -19,6 +19,10 @@ export default function Navbar() {
     {
       label: "Bookmark",
       pathname: "/bookmark",
+    },
+    {
+      label: "Learn",
+      pathname: "/learn",
     },
   ];
   const [toggle, setToggle] = useState(false);

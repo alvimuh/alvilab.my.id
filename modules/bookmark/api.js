@@ -12,7 +12,9 @@ const fetchBookmark = async () => {
 
 const postNewVisitor = async (data) => {
   try {
-    const res = await alvilabAPI.post(`/bookmark/${data.slug}/new-visitor`);
+    const res = await alvilabAPI.post(`/bookmark/new-visitor`, {
+      id: data.id,
+    });
     return true;
   } catch (error) {
     throw new Error("Failed to record new visitor");

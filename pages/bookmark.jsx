@@ -7,7 +7,7 @@ import { fetchBookmark, postNewVisitor } from "../modules/bookmark/api";
 import { ArrowUpRightIcon, EyeIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-export default function Home() {
+export default function Bookmark() {
   const [categoriesTab, setCategoriesTab] = useState({
     active: null,
     list: [
@@ -34,7 +34,7 @@ export default function Home() {
 
   const onBookmarkClick = (data) => {
     mutate({
-      slug: data.slug,
+      id: data.id,
     });
     window.open(data.link, "_blank");
   };
