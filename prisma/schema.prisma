@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type BookmarksVisitor {
+  datetime DateTime @db.Date
+  ip       String
+}
+
+model bookmarks {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  is_pinned   Boolean?
+  link        String
+  slug        String
+  title       String
+  type        String
+  /// Multiple data types found: Array(String): 29.2%, Array(BookmarksVisitor): 70.8% out of 24 sampled entries
+  visitor     Json[]
+}
+
+model resources {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  categories String[]
+  link       String
+  slug       String?
+  tags       String[]
+  title      String
+  type       String
+}
+
+model articles {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  slug              String
+  category          String
+  sub_category_name String
+  sub_category_part Int
+  featured_image    String
+  content           String
+  visitor           Int
+}
