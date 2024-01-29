@@ -12,7 +12,7 @@ type BookmarksVisitor {
   ip       String
 }
 
-model bookmarks {
+model Bookmarks {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   description String
   is_pinned   Boolean?
@@ -24,7 +24,7 @@ model bookmarks {
   visitor     Json[]
 }
 
-model resources {
+model Resources {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   categories String[]
   link       String
@@ -34,13 +34,20 @@ model resources {
   type       String
 }
 
-model articles {
-  id                String @id @default(auto()) @map("_id") @db.ObjectId
-  slug              String
-  category          String
-  sub_category_name String
-  sub_category_part Int
-  featured_image    String
-  content           String
-  visitor           Int
+model Article {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  content     String
+  publishedAt DateTime
+  subArticles SubArticle[]
+}
+
+model SubArticle {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  content     String
+  part        Int
+  parentId    String   @map("article_id") @db.ObjectId
+  article     Article  @relation(fields: [parentId], references: [id])
+  publishedAt DateTime
 }
