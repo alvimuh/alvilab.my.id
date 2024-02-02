@@ -16,6 +16,14 @@ const Footer = () => {
           <Button
             variant="base"
             className="!p-0 !text-gray-600 hover:!text-gray-900"
+            href="https://www.youtube.com/channel/UCYQVvko01kpD_qmqGsjjt4w"
+            target="_blank"
+          >
+            Youtube
+          </Button>
+          <Button
+            variant="base"
+            className="!p-0 !text-gray-600 hover:!text-gray-900"
             href="https://www.linkedin.com/in/mohamadalvir"
             target="_blank"
           >
