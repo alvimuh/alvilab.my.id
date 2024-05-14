@@ -2,7 +2,7 @@ import Button from "./Button";
 
 const Footer = () => {
   return (
-    <footer className="container-default py-6 flex flex-col md:flex-row justify-between gap-4 md:items-center">
+    <footer className="container-default py-6 flex flex-col md:flex-row justify-between gap-4 md:items-center pb-40">
       <div className="flex flex-col md:flex-row gap-1 md:gap-3 md:items-center">
         <div className="flex items-center gap-4">
           <span className="relative flex h-3 w-3">

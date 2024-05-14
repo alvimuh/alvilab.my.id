@@ -200,12 +200,19 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className="fixed z-20 bottom-0 absolute-x-center mb-4 px-2 w-full">
-          <div className="flex flex-col md:flex-row gap-4 justify-between container-default bg-white px-8 md:px-12 py-4 md:py-8 w-full shadow-2xl rounded-lg">
-            <h4 className="text-xl">Looking for my bookmark?</h4>
-            <Button>Click here</Button>
+        <div className="fixed z-20 bottom-0 absolute-x-center mb-4 px-2 w-full">
+          <div className="flex items-center gap-4 justify-between container-default bg-white px-8 md:px-12 py-6 w-full shadow-2xl rounded-lg">
+            <h4 className="text-xl mr-auto">Buy me a coffee</h4>
+            {/* <img src="/saweria.png" alt="" width={60} /> */}
+            <Button
+              href="https://saweria.co/alvimuh"
+              target="_blank"
+              variant="outlined"
+            >
+              Donate via Saweria
+            </Button>
           </div>
-        </div> */}
+        </div>
       </Section>
     </>
   );

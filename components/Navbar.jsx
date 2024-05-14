@@ -21,8 +21,8 @@ export default function Navbar() {
       pathname: "/bookmark",
     },
     {
-      label: "Learn",
-      pathname: "/learn",
+      label: "Saweria",
+      pathname: "https://saweria.co/alvimuh",
     },
   ];
   const [toggle, setToggle] = useState(false);
