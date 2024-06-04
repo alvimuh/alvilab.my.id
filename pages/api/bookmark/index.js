@@ -1,7 +1,11 @@
 import prisma from "../../../utils/prisma";
 
 export default async function handle(req, res) {
-  const posts = await prisma.bookmarks.findMany();
+  const posts = await prisma.bookmarks.findMany({
+    orderBy: {
+      is_pinned: "desc",
+    },
+  });
   posts.forEach((element) => {
     element.total_visitor = element.visitor.length;
     element.visitor = undefined;
