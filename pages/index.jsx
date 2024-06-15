@@ -182,7 +182,7 @@ export default function Home() {
             <div className="mt-6 flex flex-col md:flex-row items-stretch w-48 md:w-1/2 gap-3">
               <Button
                 isBlock
-                href="https://bit.ly/jointernakkode"
+                href="https://discord.gg/ternakkode"
                 target="_blank"
               >
                 Join Server Discord
