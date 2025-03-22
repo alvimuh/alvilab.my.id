@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <Section className="bg-gray-50 border py-12">
+      <Section className="bg-gray-50 dark:bg-gray-900 border dark:border-gray-800  py-12">
         <div>
           <p className="text-xl text-gray-800">
             I am a software engineer who has work experience as a professional
@@ -201,7 +201,7 @@ export default function Home() {
         </div>
 
         <div className="fixed z-20 bottom-0 absolute-x-center mb-4 px-2 w-full">
-          <div className="flex items-center gap-4 justify-between container-default bg-white px-8 md:px-12 py-6 w-full shadow-2xl rounded-lg">
+          <div className="flex items-center gap-4 justify-between container-default bg-white dark:bg-gray-900  px-8 md:px-12 py-6 w-full shadow-2xl rounded-lg">
             <h4 className="text-xl mr-auto">Buy me a coffee</h4>
             {/* <img src="/saweria.png" alt="" width={60} /> */}
             <Button

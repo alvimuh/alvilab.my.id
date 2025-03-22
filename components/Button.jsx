@@ -15,18 +15,24 @@ const Button = ({
   ];
   switch (variant) {
     case "solid":
-      classess.push("bg-gray-800 text-white hover:bg-gray-600");
+      classess.push(
+        "bg-gray-800 dark:bg-gray-100 text-white dark:text-gray-900 hover:bg-gray-600 dark:hover:bg-gray-300"
+      );
       break;
     case "outlined":
       classess.push(
-        "text-gray-800 text-gray-800 border border-gray-800 hover:text-gray-600 hover:border-gray-500"
+        "text-gray-800 dark:text-gray-100 border border-gray-800 dark:border-gray-100 hover:text-gray-600 dark:hover:text-gray-300 hover:border-gray-500 dark:hover:border-gray-300"
       );
       break;
     case "base":
-      classess.push("text-gray-800 text-gray-800 hover:text-gray-600");
+      classess.push(
+        "text-gray-800 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300"
+      );
       break;
     default:
-      classess.push("bg-gray-800 text-white hover:bg-gray-600");
+      classess.push(
+        "bg-gray-800 dark:bg-gray-100 text-white dark:text-gray-900 hover:bg-gray-600 dark:hover:bg-gray-300"
+      );
   }
   if (isBlock) classess.push("block w-full");
   if (className) classess.push(className);

@@ -83,19 +83,19 @@ export default function Bookmark() {
       <Section>
         {isLoading ? (
           <>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
-            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
+            <div className="w-full animate-pulse h-24 border border-gray-300 rounded mb-4 bg-gray-100 dark:bg-gray-700 dark:border-gray-600 cursor-wait"></div>
           </>
         ) : isFetched ? (
           data.filter(bookmarkFilter).map((item, index) => (
             <button
               key={index}
               onClick={() => onBookmarkClick(item)}
-              className="relative block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 cursor-pointer"
+              className="relative block w-full text-left px-3 md:px-6 py-4 md:py-5 border border-gray-300 hover:border-gray-400 rounded mb-4 hover:bg-gradient-to-b from-white to-gray-100 dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-700 dark:from-gray-900 dark:to-gray-800 cursor-pointer"
             >
               <h3 className="text-base md:text-xl leading-tight mb-1">
                 {item.title}

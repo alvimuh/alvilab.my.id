@@ -12,7 +12,7 @@ const fetchBookmark = async () => {
 
 const postNewVisitor = async (data) => {
   try {
-    const res = await alvilabAPI.post(`/bookmark/new-visitor`, {
+    await alvilabAPI.post(`/bookmark/new-visitor`, {
       id: data.id,
     });
     return true;

@@ -9,13 +9,15 @@ const Footer = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
           </span>
-          <h5 className="text-xl mb-[2px] font-normal">Keep in touch</h5>
-          <p className="text-gray-600">Follow on</p>
+          <h5 className="text-xl mb-[2px] font-normal dark:text-gray-100">
+            Keep in touch
+          </h5>
+          <p className="text-gray-600 dark:text-gray-400">Follow on</p>
         </div>
         <div className="flex gap-2 flex-wrap">
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://www.youtube.com/channel/UCYQVvko01kpD_qmqGsjjt4w"
             target="_blank"
           >
@@ -23,7 +25,7 @@ const Footer = () => {
           </Button>
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://www.linkedin.com/in/mohamadalvir"
             target="_blank"
           >
@@ -31,7 +33,7 @@ const Footer = () => {
           </Button>
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://github.com/alvimuh"
             target="_blank"
           >
@@ -39,7 +41,7 @@ const Footer = () => {
           </Button>
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://www.tiktok.com/@alvi.muh"
             target="_blank"
           >
@@ -47,7 +49,7 @@ const Footer = () => {
           </Button>
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://www.instagram.com/alvi.muh"
             target="_blank"
           >
@@ -55,7 +57,7 @@ const Footer = () => {
           </Button>
           <Button
             variant="base"
-            className="!p-0 !text-gray-600 hover:!text-gray-900"
+            className="!p-0 !text-gray-600 hover:!text-gray-900 dark:!text-gray-400 dark:hover:!text-gray-100"
             href="https://twitter.com/alvimuh19"
             target="_blank"
           >
@@ -63,8 +65,8 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-      <p className="text-gray-500 text-xs font-semibold">
-        Copyright 2023 - alvilab.my.id
+      <p className="text-gray-500 dark:text-gray-400 text-xs font-semibold">
+        Copyright {new Date().getFullYear()} - alvilab.my.id
       </p>
     </footer>
   );

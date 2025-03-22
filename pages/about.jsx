@@ -35,7 +35,7 @@ export default function About() {
           </div>
         </div>
       </header>
-      <Section className="bg-gray-50 border py-12">
+      <Section className="bg-gray-50 border dark:bg-gray-900 dark:border-gray-800 py-12">
         <div>
           <h2 className="text-xl mb-2">Technical Skills</h2>
           <p>
