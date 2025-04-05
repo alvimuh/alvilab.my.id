@@ -234,6 +234,67 @@ export default function Secreto() {
                     key={msg.id}
                     className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm
                              border border-gray-100 dark:border-gray-700"
+                    onClick={(e) => {
+                      // const startTime = Date.now();
+                      // const touchTimeout = setTimeout(() => {
+                      // Create a div to capture as image
+                      const element = e.currentTarget;
+
+                      // Use html2canvas to convert the element to an image
+                      import("html2canvas").then(({ default: html2canvas }) => {
+                        html2canvas(element).then((canvas) => {
+                          // Convert canvas to blob
+                          canvas.toBlob((blob) => {
+                            // Create a File object
+                            const file = new File(
+                              [blob],
+                              "secreto-message.png",
+                              { type: "image/png" }
+                            );
+                            // Try sharing with files first
+                            if (
+                              navigator.canShare &&
+                              navigator.canShare({ files: [file] })
+                            ) {
+                              navigator
+                                .share({
+                                  files: [file],
+                                  title: "Secreto Message",
+                                  text: "Check out this anonymous message!",
+                                })
+                                .catch((error) => {
+                                  console.error("Error sharing file:", error);
+                                  // Fallback to sharing just text for Safari
+                                  navigator
+                                    .share({
+                                      title: "Secreto Message",
+                                      text: msg.message,
+                                      url: window.location.href,
+                                    })
+                                    .catch((error) =>
+                                      console.error(
+                                        "Error sharing text:",
+                                        error
+                                      )
+                                    );
+                                });
+                            }
+                          }, "image/png");
+                        });
+                      });
+                      // }, 800); // 800ms hold time to trigger
+
+                      // Clear timeout if touch ends before threshold
+                      // e.currentTarget.addEventListener(
+                      //   "touchend",
+                      //   () => {
+                      //     if (Date.now() - startTime < 800) {
+                      //       clearTimeout(touchTimeout);
+                      //     }
+                      //   },
+                      //   { once: true }
+                      // );
+                    }}
                   >
                     <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 ">
                       {msg.message}
