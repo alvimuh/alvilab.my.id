@@ -9,6 +9,7 @@
     "@gsap/react": "^2.1.2",
     "@heroicons/react": "^2.0.17",
     "@prisma/client": "^5.8.1",
+    "@supabase/supabase-js": "^2.49.4",
     "axios": "^1.4.0",
     "eslint-config-next": "^14.0.4",
     "gsap": "^3.12.7",
