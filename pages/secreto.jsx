@@ -151,7 +151,7 @@ export default function Secreto() {
     clonedElement.style.margin = "auto";
     clonedElement.style.backgroundColor = "white";
     clonedElement.style.borderRadius = "24px";
-    clonedElement.style.border = undefined;
+    clonedElement.style.border = "0";
     clonedElement.style.boxShadow =
       "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
 
@@ -173,7 +173,7 @@ export default function Secreto() {
       .then(({ default: html2canvas }) => {
         html2canvas(container, {
           removeContainer: true,
-          backgroundColor: "rgba(0, 0, 0, 0)",
+          backgroundColor: "rgb(244, 245, 246)",
           allowTaint: true,
         }).then((canvas) => {
           // Convert canvas to blob
