@@ -341,7 +341,7 @@ export default function Secreto() {
                           </span>
                         )} */}
                       </div>
-                      <time>{formatDate(msg.created_at)}</time>
+                      {/* <time>{formatDate(msg.created_at)}</time> */}
                     </div>
 
                     {/* Reply section */}
