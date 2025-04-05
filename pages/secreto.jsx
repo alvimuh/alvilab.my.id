@@ -166,10 +166,10 @@ export default function Secreto() {
 
     // Get the paragraph element inside clonedElement that contains the message
     Array.from(clonedElement.getElementsByTagName("p")).forEach(
-      (p) => (p.style.color = "rgb(255 255 255 / 80%)")
+      (p) => (p.style.color = "rgb(255 255 255 / 90%)")
     );
     Array.from(clonedElement.getElementsByTagName("span")).forEach(
-      (span) => (span.style.color = "rgb(255 255 255 / 50%)")
+      (span) => (span.style.color = "rgb(255 255 255 / 60%)")
     );
     Array.from(clonedElement.getElementsByTagName("time")).forEach(
       (time) => (time.style.display = "none")
@@ -201,13 +201,7 @@ export default function Secreto() {
                 text: "Check out this anonymous message!",
               });
             }
-            // Place the image at the bottom of the page for development
-            const img = document.createElement("img");
-            img.src = URL.createObjectURL(blob);
-            document.body.appendChild(img);
-            // img.style.position = "fixed";
-            // img.style.bottom = "0";
-          }, "image/png");
+          });
         });
       })
       .finally(() => {
@@ -334,7 +328,7 @@ export default function Secreto() {
                              border border-gray-100 dark:border-gray-700"
                     onDoubleClick={(e) => handleShare(e, msg)}
                   >
-                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 text-lg">
+                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 text-md font-medium">
                       {msg.message}
                     </p>
                     <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
