@@ -124,8 +124,6 @@ export default function Secreto() {
     const container = document.createElement("div");
     container.style.width = "375px";
     container.style.height = "812px";
-    container.style.position = "fixed";
-    container.style.left = "-9999px";
 
     container.style.padding = "20px";
     container.style.boxSizing = "border-box";
@@ -151,30 +149,53 @@ export default function Secreto() {
     clonedElement.style.objectPosition = "center";
     clonedElement.style.display = "block";
     clonedElement.style.margin = "auto";
+    clonedElement.style.backgroundColor = "white";
+    clonedElement.style.borderRadius = "24px";
+    clonedElement.style.border = undefined;
+    clonedElement.style.boxShadow =
+      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
+
+    // Get the paragraph element inside clonedElement that contains the message
+    Array.from(clonedElement.getElementsByTagName("p")).forEach(
+      (p) => (p.style.color = "#333333")
+    );
+    Array.from(clonedElement.getElementsByTagName("span")).forEach(
+      (span) => (span.style.color = "#666666")
+    );
+    Array.from(clonedElement.getElementsByTagName("time")).forEach(
+      (time) => (time.style.display = "none")
+    );
+
     container.appendChild(clonedElement);
 
-    // Use the container as the element to capture
-    const element = container;
     // Use html2canvas to convert the element to an image
-    import("html2canvas").then(({ default: html2canvas }) => {
-      html2canvas(element).then((canvas) => {
-        // Convert canvas to blob
-        canvas.toBlob((blob) => {
-          // Create a File object
-          const file = new File([blob], "secreto-message.png", {
-            type: "image/png",
-          });
-          // Try sharing with files first
-          if (navigator.canShare && navigator.canShare({ files: [file] })) {
-            navigator.share({
-              files: [file],
-              title: "Secreto Message",
-              text: "Check out this anonymous message!",
+    import("html2canvas")
+      .then(({ default: html2canvas }) => {
+        html2canvas(container, {
+          removeContainer: true,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          allowTaint: true,
+        }).then((canvas) => {
+          // Convert canvas to blob
+          canvas.toBlob((blob) => {
+            // Create a File object
+            const file = new File([blob], "secreto-message.png", {
+              type: "image/png",
             });
-          }
-        }, "image/png");
+            // Try sharing with files first
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+              navigator.share({
+                files: [file],
+                title: "Secreto Message",
+                text: "Check out this anonymous message!",
+              });
+            }
+          }, "image/png");
+        });
+      })
+      .finally(() => {
+        document.body.removeChild(container);
       });
-    });
 
     // // Use html2canvas to convert the element to an image
     // import("html2canvas").then(({ default: html2canvas }) => {
@@ -216,6 +237,8 @@ export default function Secreto() {
                   alt="Alvi Muh"
                   width={48}
                   height={48}
+                  objectFit="contain"
+                  objectPosition="center"
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -315,12 +338,12 @@ export default function Secreto() {
                              border border-gray-100 dark:border-gray-700"
                     onDoubleClick={(e) => handleShare(e, msg)}
                   >
-                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 ">
+                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 message">
                       {msg.message}
                     </p>
                     <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium">{msg.name}</span>
+                        <span className="font-medium author">{msg.name}</span>
                         {/* {msg.location && (
                           <span className="text-gray-400 dark:text-gray-500">
                             from {msg.location?.city ?? "unknown city"},{" "}
