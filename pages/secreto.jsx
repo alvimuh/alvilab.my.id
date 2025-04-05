@@ -228,7 +228,7 @@ export default function Secreto() {
 
       <Navbar />
       <main className="pt-32 pb-12 min-h-screen space-y-16">
-        <section className="max-w-2xl mx-auto">
+        <section className="max-w-3xl mx-auto px-4">
           <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-full overflow-hidden">
@@ -317,7 +317,7 @@ export default function Secreto() {
           </div>
         </section>
 
-        <section className="max-w-2xl mx-auto">
+        <section className="max-w-3xl mx-auto px-4">
           {/* Messages Feed Section */}
           <div className="border-t border-gray-200 dark:border-gray-800 pt-16">
             <h2 className="text-2xl font-bold mb-8">Messages</h2>
