@@ -23,6 +23,10 @@ export default function Navbar() {
       pathname: "/bookmark",
     },
     {
+      label: "Secreto",
+      pathname: "/secreto",
+    },
+    {
       label: "Saweria",
       pathname: "https://saweria.co/alvimuh",
     },
