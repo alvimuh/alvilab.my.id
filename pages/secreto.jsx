@@ -360,7 +360,7 @@ export default function Secreto() {
                                 replied
                               </span>
                             </div>
-                            <p className="text-gray-800 dark:text-gray-200 text-sm">
+                            <p className="text-gray-800 dark:text-gray-200 text-sm whitespace-pre-wrap">
                               {msg.reply}
                             </p>
                           </div>
