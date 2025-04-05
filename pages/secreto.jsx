@@ -165,16 +165,17 @@ export default function Secreto() {
     clonedElement.style.border = "1px solid rgba(255, 255, 255, 0.89)";
 
     // Get the paragraph element inside clonedElement that contains the message
-    Array.from(clonedElement.getElementsByTagName("p")).forEach((p) => {
-      p.style.color = "rgb(255 255 255 / 80%)";
-      p.style.fontSize = "20px";
-      p.style.lineHeight = "24px";
-    });
+    Array.from(clonedElement.getElementsByTagName("p")).forEach(
+      (p) => (p.style.color = "rgb(255 255 255 / 80%)")
+    );
     Array.from(clonedElement.getElementsByTagName("span")).forEach(
       (span) => (span.style.color = "rgb(255 255 255 / 50%)")
     );
     Array.from(clonedElement.getElementsByTagName("time")).forEach(
       (time) => (time.style.display = "none")
+    );
+    Array.from(clonedElement.getElementsByTagName("div")).forEach(
+      (time) => (time.style.borderColor = "rgb(255 255 255 / 20%)")
     );
 
     container.appendChild(clonedElement);
@@ -184,6 +185,7 @@ export default function Secreto() {
       .then(({ default: html2canvas }) => {
         html2canvas(container, {
           allowTaint: true,
+          scale: 3,
         }).then((canvas) => {
           // Convert canvas to blob
           canvas.toBlob((blob) => {
@@ -199,6 +201,12 @@ export default function Secreto() {
                 text: "Check out this anonymous message!",
               });
             }
+            // Place the image at the bottom of the page for development
+            const img = document.createElement("img");
+            img.src = URL.createObjectURL(blob);
+            document.body.appendChild(img);
+            // img.style.position = "fixed";
+            // img.style.bottom = "0";
           }, "image/png");
         });
       })
@@ -326,12 +334,12 @@ export default function Secreto() {
                              border border-gray-100 dark:border-gray-700"
                     onDoubleClick={(e) => handleShare(e, msg)}
                   >
-                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 message">
+                    <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 text-lg">
                       {msg.message}
                     </p>
                     <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium author">{msg.name}</span>
+                        <span className="font-medium">{msg.name}</span>
                         {/* {msg.location && (
                           <span className="text-gray-400 dark:text-gray-500">
                             from {msg.location?.city ?? "unknown city"},{" "}
@@ -347,13 +355,7 @@ export default function Secreto() {
                       <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
-                            <Image
-                              src="/memoji.jpg"
-                              alt="Alvi Muh"
-                              width={32}
-                              height={32}
-                              className="object-cover w-full h-full"
-                            />
+                            <img src="/memoji.jpg" alt="Alvi Muh" />
                           </div>
                           <div>
                             <div className="flex items-center gap-2 mb-1">
