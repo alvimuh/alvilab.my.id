@@ -119,6 +119,85 @@ export default function Secreto() {
     });
   };
 
+  const handleShare = async (e, msg) => {
+    // Create temporary container with phone resolution
+    const container = document.createElement("div");
+    container.style.width = "375px";
+    container.style.height = "812px";
+    container.style.position = "fixed";
+    container.style.left = "-9999px";
+
+    container.style.padding = "20px";
+    container.style.boxSizing = "border-box";
+    container.style.display = "flex";
+    container.style.flexDirection = "column";
+    container.style.alignItems = "center";
+    document.body.appendChild(container);
+
+    // Add title
+    const title = document.createElement("div");
+    title.textContent = "alvilab.my.id/secreto";
+    title.style.textAlign = "center";
+    title.style.fontWeight = "bold";
+    title.style.marginBottom = "15px";
+    title.style.fontSize = "18px";
+    title.style.width = "100%";
+    container.appendChild(title);
+
+    // Clone the message element and center it in container
+    const clonedElement = e.currentTarget.cloneNode(true);
+    clonedElement.style.width = "100%";
+    clonedElement.style.objectFit = "contain";
+    clonedElement.style.objectPosition = "center";
+    clonedElement.style.display = "block";
+    clonedElement.style.margin = "auto";
+    container.appendChild(clonedElement);
+
+    // Use the container as the element to capture
+    const element = container;
+    // Use html2canvas to convert the element to an image
+    import("html2canvas").then(({ default: html2canvas }) => {
+      html2canvas(element).then((canvas) => {
+        // Convert canvas to blob
+        canvas.toBlob((blob) => {
+          // Create a File object
+          const file = new File([blob], "secreto-message.png", {
+            type: "image/png",
+          });
+          // Try sharing with files first
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            navigator.share({
+              files: [file],
+              title: "Secreto Message",
+              text: "Check out this anonymous message!",
+            });
+          }
+        }, "image/png");
+      });
+    });
+
+    // // Use html2canvas to convert the element to an image
+    // import("html2canvas").then(({ default: html2canvas }) => {
+    //   html2canvas(element).then((canvas) => {
+    //     // Convert canvas to blob
+    //     canvas.toBlob((blob) => {
+    //       // Create a File object
+    //       const file = new File([blob], "secreto-message.png", {
+    //         type: "image/png",
+    //       });
+    //       // Try sharing with files first
+    //       if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    //         navigator.share({
+    //           files: [file],
+    //           title: "Secreto Message",
+    //           text: "Check out this anonymous message!",
+    //         });
+    //       }
+    //     }, "image/png");
+    //   });
+    // });
+  };
+
   return (
     <>
       <Head>
@@ -234,67 +313,7 @@ export default function Secreto() {
                     key={msg.id}
                     className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm
                              border border-gray-100 dark:border-gray-700"
-                    onClick={(e) => {
-                      // const startTime = Date.now();
-                      // const touchTimeout = setTimeout(() => {
-                      // Create a div to capture as image
-                      const element = e.currentTarget;
-
-                      // Use html2canvas to convert the element to an image
-                      import("html2canvas").then(({ default: html2canvas }) => {
-                        html2canvas(element).then((canvas) => {
-                          // Convert canvas to blob
-                          canvas.toBlob((blob) => {
-                            // Create a File object
-                            const file = new File(
-                              [blob],
-                              "secreto-message.png",
-                              { type: "image/png" }
-                            );
-                            // Try sharing with files first
-                            if (
-                              navigator.canShare &&
-                              navigator.canShare({ files: [file] })
-                            ) {
-                              navigator
-                                .share({
-                                  files: [file],
-                                  title: "Secreto Message",
-                                  text: "Check out this anonymous message!",
-                                })
-                                .catch((error) => {
-                                  console.error("Error sharing file:", error);
-                                  // Fallback to sharing just text for Safari
-                                  navigator
-                                    .share({
-                                      title: "Secreto Message",
-                                      text: msg.message,
-                                      url: window.location.href,
-                                    })
-                                    .catch((error) =>
-                                      console.error(
-                                        "Error sharing text:",
-                                        error
-                                      )
-                                    );
-                                });
-                            }
-                          }, "image/png");
-                        });
-                      });
-                      // }, 800); // 800ms hold time to trigger
-
-                      // Clear timeout if touch ends before threshold
-                      // e.currentTarget.addEventListener(
-                      //   "touchend",
-                      //   () => {
-                      //     if (Date.now() - startTime < 800) {
-                      //       clearTimeout(touchTimeout);
-                      //     }
-                      //   },
-                      //   { once: true }
-                      // );
-                    }}
+                    onDoubleClick={(e) => handleShare(e, msg)}
                   >
                     <p className="whitespace-pre-wrap text-gray-800 dark:text-gray-200 mb-4 ">
                       {msg.message}
