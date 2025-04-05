@@ -241,12 +241,12 @@ export default function Secreto() {
                     <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{msg.name}</span>
-                        {msg.location && (
+                        {/* {msg.location && (
                           <span className="text-gray-400 dark:text-gray-500">
-                            from {JSON.parse(msg.location).city},{" "}
-                            {JSON.parse(msg.location).country}
+                            from {msg.location?.city ?? "unknown city"},{" "}
+                            {msg.location?.country ?? "unknown country"}
                           </span>
-                        )}
+                        )} */}
                       </div>
                       <time>{formatDate(msg.created_at)}</time>
                     </div>
