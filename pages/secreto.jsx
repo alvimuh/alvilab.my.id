@@ -130,6 +130,9 @@ export default function Secreto() {
     container.style.display = "flex";
     container.style.flexDirection = "column";
     container.style.alignItems = "center";
+    container.style.justifyContent = "center";
+    container.style.backgroundImage =
+      "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)";
     document.body.appendChild(container);
 
     // Add title
@@ -137,9 +140,9 @@ export default function Secreto() {
     title.textContent = "alvilab.my.id/secreto";
     title.style.textAlign = "center";
     title.style.fontWeight = "bold";
-    title.style.marginBottom = "15px";
     title.style.fontSize = "18px";
     title.style.width = "100%";
+    title.style.color = "white";
     container.appendChild(title);
 
     // Clone the message element and center it in container
@@ -152,15 +155,23 @@ export default function Secreto() {
     clonedElement.style.backgroundColor = "white";
     clonedElement.style.borderRadius = "24px";
     clonedElement.style.border = "0";
-    clonedElement.style.boxShadow =
-      "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)";
+    clonedElement.style.marginTop = "30px";
+    clonedElement.style.marginBottom = "30px";
+    clonedElement.style.background = "rgba(255, 255, 255, 0.21)";
+    clonedElement.style.borderRadius = "16px";
+    clonedElement.style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.1)";
+    clonedElement.style.backdropFilter = "blur(15.9px)";
+    clonedElement.style.WebkitBackdropFilter = "blur(15.9px)";
+    clonedElement.style.border = "1px solid rgba(255, 255, 255, 0.89)";
 
     // Get the paragraph element inside clonedElement that contains the message
-    Array.from(clonedElement.getElementsByTagName("p")).forEach(
-      (p) => (p.style.color = "#333333")
-    );
+    Array.from(clonedElement.getElementsByTagName("p")).forEach((p) => {
+      p.style.color = "rgb(255 255 255 / 80%)";
+      p.style.fontSize = "20px";
+      p.style.lineHeight = "24px";
+    });
     Array.from(clonedElement.getElementsByTagName("span")).forEach(
-      (span) => (span.style.color = "#666666")
+      (span) => (span.style.color = "rgb(255 255 255 / 50%)")
     );
     Array.from(clonedElement.getElementsByTagName("time")).forEach(
       (time) => (time.style.display = "none")
@@ -172,8 +183,6 @@ export default function Secreto() {
     import("html2canvas")
       .then(({ default: html2canvas }) => {
         html2canvas(container, {
-          removeContainer: true,
-          backgroundColor: "rgb(244, 245, 246)",
           allowTaint: true,
         }).then((canvas) => {
           // Convert canvas to blob
@@ -196,27 +205,6 @@ export default function Secreto() {
       .finally(() => {
         document.body.removeChild(container);
       });
-
-    // // Use html2canvas to convert the element to an image
-    // import("html2canvas").then(({ default: html2canvas }) => {
-    //   html2canvas(element).then((canvas) => {
-    //     // Convert canvas to blob
-    //     canvas.toBlob((blob) => {
-    //       // Create a File object
-    //       const file = new File([blob], "secreto-message.png", {
-    //         type: "image/png",
-    //       });
-    //       // Try sharing with files first
-    //       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-    //         navigator.share({
-    //           files: [file],
-    //           title: "Secreto Message",
-    //           text: "Check out this anonymous message!",
-    //         });
-    //       }
-    //     }, "image/png");
-    //   });
-    // });
   };
 
   return (
